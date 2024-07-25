@@ -1,0 +1,16 @@
+<ul>
+    {% for child in children %}
+        <li>
+            <a href="{{ child.item.get_absolute_url }}" style="color: inherit;">
+                {% if child.is_active %}
+                    <span style="background-color: #d3d3d3;">{{ child.item.title }}</span>
+                {% else %}
+                    {{ child.item.title }}
+                {% endif %}
+            </a>
+            {% if child.children %}
+                {% include 'menu/menu_tree.html' with children=child.children %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

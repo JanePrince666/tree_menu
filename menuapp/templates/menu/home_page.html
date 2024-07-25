@@ -6,8 +6,13 @@
     <title>Home Page</title>
 </head>
 <body>
+    {% load menu_tags %}
     <div>
-        <h>This is home page</h>
+        <h1>This is home page</h1>
+        <p>Example of adding a table by name 'main_menu'</p>
+        {% draw_menu 'main_menu' %}
+        <p>Example of adding a table by name 'menu_2'</p>
+        {% draw_menu 'menu_2' %}
     </div>
 </body>
 </html>
