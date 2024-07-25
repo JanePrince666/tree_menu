@@ -1,3 +1,10 @@
+from django.views import View
 from django.shortcuts import render
 
-# Create your views here.
+
+class MenuView(View):
+    template_name = 'menu/home_page.html'
+
+    def get(self, request, *args, **kwargs):
+
+        return render(request, self.template_name)
